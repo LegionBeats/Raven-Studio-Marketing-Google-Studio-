@@ -1,0 +1,7 @@
+{
+  "name": "Elite Service Portfolio",
+  "description": "A high-end, client-facing service menu and catalog designed for professional organizations to showcase their internal and external service offerings with AI-driven recommendations.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
