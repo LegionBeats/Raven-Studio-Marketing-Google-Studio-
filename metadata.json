@@ -1,6 +1,6 @@
 {
-  "name": "Elite Service Portfolio",
-  "description": "A high-end, client-facing service menu and catalog designed for professional organizations to showcase their internal and external service offerings with AI-driven recommendations.",
+  "name": "Crowd Connect | Studio OS",
+  "description": "The high-impact operating system for modern recording studios. Automate bookings, rescue missed calls, and scale your reputation with AI-powered business infrastructure.",
   "requestFramePermissions": [
     "microphone"
   ]

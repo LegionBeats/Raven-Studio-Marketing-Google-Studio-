@@ -31,7 +31,7 @@ const App: React.FC = () => {
         <div className="hidden md:flex gap-8 text-[11px] font-bold uppercase tracking-[0.2em] text-white/60">
           <a href="#catalog" className="hover:text-pink-500 transition-colors">Infrastructure</a>
           <a href="#catalog" className="hover:text-pink-500 transition-colors">Automation</a>
-          <a href="#faq" className="hover:text-pink-500 transition-colors">FAQ</a>
+          <a href="#strategy" className="hover:text-pink-500 transition-colors">Strategy Session</a>
         </div>
         <button className="px-5 py-2.5 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all">
           Member Login
@@ -44,36 +44,26 @@ const App: React.FC = () => {
         <div className="absolute top-20 right-[-10%] w-[400px] h-[400px] bg-pink-600/10 rounded-full blur-[120px] pointer-events-none"></div>
         
         <div className="relative z-10 max-w-5xl mx-auto">
-          <div className="inline-block px-6 py-2 bg-orange-500/10 border border-orange-500/30 rounded-full mb-10">
-            <span className="text-orange-500 text-[11px] font-black uppercase tracking-[0.2em]">The #1 Operating System for Studios</span>
+          <div className="inline-block px-6 py-2 bg-pink-500/10 border border-pink-500/30 rounded-full mb-10">
+            <span className="text-pink-500 text-[11px] font-black uppercase tracking-[0.2em]">The Operating System for Modern Studios</span>
           </div>
           
           <h1 className="text-6xl md:text-[110px] font-heading font-black leading-[0.85] mb-8 text-white uppercase italic tracking-tighter">
-            Build Your <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500">Business Empire</span> in Days.
+            Your Studio, <span className="text-transparent bg-clip-text bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-500">On Autopilot.</span>
           </h1>
           
           <p className="text-lg md:text-2xl text-slate-400 font-medium mb-12 max-w-3xl mx-auto leading-relaxed">
-            Everything you need to automate your lead flow, rescue missed calls, and scale your client base without spending thousands on a team of assistants.
+            Stop letting sessions slip through the cracks while you're in the booth. We build the AI-powered systems that capture your leads, book your engineers, and handle your billing—so you can focus on the music.
           </p>
           
           <div className="flex flex-col items-center gap-6">
             <button 
-              onClick={() => document.getElementById('catalog')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => document.getElementById('strategy')?.scrollIntoView({ behavior: 'smooth' })}
               className="btn-primary px-16 py-6 rounded-2xl text-xl font-black uppercase tracking-wider text-white shadow-2xl"
             >
-              Get Instant Access
+              Book Your Studio Strategy Session
             </button>
-            
-            <div className="flex items-center gap-4">
-              <div className="flex text-yellow-500 text-sm">
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-              </div>
-              <p className="text-sm text-slate-400 font-medium"><span className="text-white font-bold">4.8 Rating</span> with 1,400+ clients worldwide</p>
-            </div>
+            <p className="text-xs text-white/40 font-bold uppercase tracking-widest">See our automation in action the moment you click.</p>
           </div>
         </div>
       </header>
@@ -82,12 +72,12 @@ const App: React.FC = () => {
       <main id="catalog" className="flex-grow max-w-7xl mx-auto w-full px-4 pb-20 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-sm font-bold tracking-[0.4em] uppercase text-white/40 mb-4">Introducing...</h2>
-          <h3 className="text-4xl md:text-6xl font-heading font-black uppercase tracking-tight">Crowd Connect <span className="text-pink-500 italic">2.0</span></h3>
+          <h3 className="text-4xl md:text-6xl font-heading font-black uppercase tracking-tight">Studio Manager <span className="text-pink-500 italic">2.0</span></h3>
           <div className="w-24 h-1 bg-pink-500 mx-auto mt-6"></div>
         </div>
 
         {/* Filter Bar */}
-        <div className="bg-[#16161a] border border-white/5 rounded-3xl p-4 mb-16 flex flex-col md:flex-row gap-6 items-center justify-between sticky top-24 z-30 shadow-2xl">
+        <div className="bg-[#16161a] border border-white/5 rounded-3xl p-4 mb-16 flex flex-col md:flex-row gap-6 items-center justify-between shadow-2xl">
           <div className="flex gap-2 overflow-x-auto pb-2 md:pb-0 no-scrollbar w-full md:w-auto">
             {['All', ...Object.values(ServiceCategory)].map((cat) => (
               <button
@@ -110,7 +100,7 @@ const App: React.FC = () => {
             </span>
             <input 
               type="text"
-              placeholder="Search products..."
+              placeholder="Search features..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="w-full pl-12 pr-6 py-3.5 bg-black/40 border border-white/10 rounded-2xl focus:ring-1 focus:ring-pink-500 outline-none transition-all text-sm font-medium text-white"
@@ -129,76 +119,60 @@ const App: React.FC = () => {
           ))}
         </div>
 
+        {/* Strategy Session Section (Replaces Pricing) */}
+        <section id="strategy" className="mt-40 bg-[#16161a] border border-white/10 rounded-[40px] p-8 md:p-16 max-w-4xl mx-auto shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-64 h-64 bg-pink-500/10 blur-[100px] pointer-events-none"></div>
+          
+          <div className="text-center mb-12">
+            <h4 className="text-xs font-bold tracking-[0.4em] uppercase text-white/40 mb-4">Take the shortcut</h4>
+            <h3 className="text-4xl md:text-5xl font-heading font-black uppercase mb-4 tracking-tighter">What we’ll cover in your <br/> <span className="text-pink-500 italic">15-minute Strategy Session:</span></h3>
+            <div className="w-16 h-1 bg-pink-500 mx-auto"></div>
+          </div>
+
+          <div className="space-y-8 mb-12">
+            <PitchItem 
+              num="01" 
+              label="The Leak Audit" 
+              desc="We'll find exactly where you're losing artists in your current DM and booking flow." 
+            />
+            <PitchItem 
+              num="02" 
+              label="The AI Roadmap" 
+              desc="A custom plan to train a chatbot on your specific gear list and hourly rates." 
+            />
+            <PitchItem 
+              num="03" 
+              label="The 'Tap-to-Pay' Setup" 
+              desc="How to turn your smartphone into a credit card reader in under 5 minutes." 
+            />
+          </div>
+
+          <button className="btn-primary w-full py-6 rounded-2xl text-2xl font-black uppercase tracking-wider text-white shadow-2xl mb-8">
+            Claim Your Studio Audit
+          </button>
+          
+          <div className="flex justify-center items-center gap-6 opacity-40 grayscale">
+            <i className="fa-brands fa-apple-pay text-3xl"></i>
+            <i className="fa-brands fa-google-pay text-3xl"></i>
+            <i className="fa-brands fa-stripe text-3xl"></i>
+          </div>
+        </section>
+
         {/* Testimonials Section */}
         <section className="mt-40 mb-32">
           <div className="text-center mb-16">
-            <h4 className="text-sm font-bold tracking-[0.4em] uppercase text-white/40 mb-4">Real Results, Real Fast</h4>
-            <h3 className="text-4xl md:text-6xl font-heading font-black uppercase tracking-tight">What do our clients say?</h3>
+            <h4 className="text-sm font-bold tracking-[0.4em] uppercase text-white/40 mb-4">Studio Owners Say</h4>
+            <h3 className="text-4xl md:text-6xl font-heading font-black uppercase tracking-tight">The Red Light Is On.</h3>
             <div className="w-24 h-1 bg-pink-500 mx-auto mt-6"></div>
           </div>
           
           <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-            <TestimonialCard text="Crowd Connect completely transformed my studio workflow. The missed call text-back feature alone paid for the entire year in week one!" author="Marcus V." />
-            <TestimonialCard text="Best tips and advice I've ever seen in the industry. The automation setup is incredibly smooth." author="Sarah L." />
-            <TestimonialCard text="I was skeptical about AI chatbots but the booking agent they built is saving me 10+ hours a week. Highly recommend." author="Steffen J." />
-            <TestimonialCard text="The smart website funnel actually converts. Finally a web presence that makes money instead of just sitting there." author="Jason D." />
-            <TestimonialCard text="10/10 service. The A2P registration was handled for me and everything works exactly as promised." author="Nacho R." />
-            <TestimonialCard text="No fluff. Just the systems that work. Crowd Connect is the real deal." author="Eric M." />
+            <TestimonialCard text="Missed call text-back is a game changer. I caught a 4-hour lockout booking while I was in the middle of a mix session." author="Dave S., Studio A" />
+            <TestimonialCard text="The AI receptionist actually knows my outboard gear. Artists get their technical questions answered at 2 AM while I'm asleep." author="Lexi P., Head Engineer" />
+            <TestimonialCard text="Deposits are automated now. No more no-shows or 'forgetting the cash' at the end of a long night." author="Marcus J., Facility Manager" />
           </div>
         </section>
 
-        {/* Pricing/Access Box */}
-        <section className="mt-40 bg-[#16161a] border border-white/10 rounded-[40px] p-8 md:p-16 max-w-4xl mx-auto shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-pink-500/10 blur-[100px] pointer-events-none"></div>
-          
-          <div className="text-center mb-12">
-            <h3 className="text-4xl md:text-5xl font-heading font-black uppercase mb-4 tracking-tighter">Ready to level up?</h3>
-            <div className="w-16 h-1 bg-pink-500 mx-auto"></div>
-          </div>
-
-          <div className="space-y-6 mb-12">
-            <PricingItem label="Full Business OS Suite" price="€700" check />
-            <PricingItem label="AI Chatbot & Booking Integration" price="€200" check />
-            <PricingItem label="Missed Call Rescue Automation" price="€150" check />
-            <PricingItem label="A2P & SMS Compliance Handling" price="€100" check />
-            <PricingItem label="Lifetime Access & Updates" price="€400" check />
-            <div className="border-t border-white/5 pt-6 flex justify-between items-center text-white/40 font-medium">
-              <span>Total Value</span>
-              <span>€1550</span>
-            </div>
-            <div className="flex justify-between items-center text-white font-bold text-xl">
-              <span>Normal Price</span>
-              <span>€297</span>
-            </div>
-            <div className="flex justify-between items-center text-pink-500 font-black text-2xl">
-              <span className="flex items-center gap-2">✨ New Year's Sale <span className="text-[10px] bg-white/10 px-2 py-0.5 rounded text-white font-bold">STILL ACTIVE</span></span>
-              <span>€197</span>
-            </div>
-          </div>
-
-          <button className="btn-primary w-full py-6 rounded-2xl text-2xl font-black uppercase tracking-wider text-white shadow-2xl mb-8">
-            Get Instant Access
-          </button>
-          
-          <div className="flex flex-col items-center gap-4">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" className="h-6 opacity-40 invert grayscale" alt="PayPal" />
-            <p className="text-[10px] text-white/30 font-bold uppercase tracking-[0.2em]">30-Day Money Back Guarantee</p>
-          </div>
-        </section>
-
-        {/* FAQ Section */}
-        <section id="faq" className="mt-40 max-w-3xl mx-auto">
-          <div className="text-center mb-16">
-             <h3 className="text-4xl font-heading font-black uppercase tracking-tight">Questions?</h3>
-             <div className="w-16 h-1 bg-pink-500 mx-auto mt-4"></div>
-          </div>
-          <div className="space-y-4">
-            <FAQItem question="What is the ongoing software cost?" answer="The core infrastructure runs on Crowd Connect (GHL) which is $97/month. This replaces your CRM, booking site, email host, and automation tools." />
-            <FAQItem question="Do I need technical skills?" answer="No. We handle the heavy lifting including DNS settings, A2P registration, and API connections. You focus on your business." />
-            <FAQItem question="How long does setup take?" answer="Standard setups take about 6-8 business days once we have your EIN and business details for compliance." />
-            <FAQItem question="Is there a money back guarantee?" answer="Yes! We offer a 30-day zero-risk guarantee. If you aren't completely satisfied, we'll refund your setup fee." />
-          </div>
-        </section>
       </main>
 
       <AIAssistant services={SERVICES} />
@@ -228,33 +202,15 @@ const App: React.FC = () => {
   );
 };
 
-const PricingItem = ({ label, price, check }: { label: string, price: string, check?: boolean }) => (
-  <div className="flex justify-between items-center text-sm font-medium">
-    <div className="flex items-center gap-3">
-      {check && <i className="fa-solid fa-circle-check text-emerald-400"></i>}
-      <span className="text-white/80">{label}</span>
+const PitchItem = ({ num, label, desc }: { num: string, label: string, desc: string }) => (
+  <div className="flex gap-6 items-start">
+    <span className="text-pink-500 font-black text-2xl font-heading opacity-50">{num}</span>
+    <div>
+      <h4 className="text-white font-bold text-lg mb-1 uppercase tracking-tight">{label}</h4>
+      <p className="text-slate-400 text-sm">{desc}</p>
     </div>
-    <span className="text-white">{price}</span>
   </div>
 );
-
-const FAQItem = ({ question, answer }: { question: string, answer: string }) => {
-  const [open, setOpen] = useState(false);
-  return (
-    <div className="bg-[#16161a] border border-white/5 rounded-2xl overflow-hidden transition-all">
-      <button 
-        onClick={() => setOpen(!open)}
-        className="w-full px-8 py-6 flex justify-between items-center text-left hover:bg-white/5 transition-colors"
-      >
-        <span className="text-lg font-bold text-white">{question}</span>
-        <i className={`fa-solid fa-chevron-down transition-transform duration-300 ${open ? 'rotate-180' : ''}`}></i>
-      </button>
-      <div className={`transition-all duration-300 ${open ? 'max-h-96 opacity-100 p-8 pt-0' : 'max-h-0 opacity-0 overflow-hidden'}`}>
-        <p className="text-slate-400 leading-relaxed">{answer}</p>
-      </div>
-    </div>
-  );
-}
 
 const TestimonialCard = ({ text, author }: { text: string, author: string }) => (
   <div className="bg-[#16161a] border border-white/5 p-8 rounded-3xl shadow-xl transition-all hover:scale-[1.02] hover:bg-white/5 group">
